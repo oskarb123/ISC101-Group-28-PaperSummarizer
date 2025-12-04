@@ -1,8 +1,8 @@
-# Module 02 — Section Loop
+> Change Log (2025-12-02): Added summary_level modes with short and detailed behavior.
 
-- Loop through each section in the ordered section list.
-- Extract matching paper text for each section.
-- If the text is missing or empty → send to Guardrails for warnings.
-- If present → generate a ≤50-word summary using only that section’s text.
-- Match terminology and style to the chosen audience.
-- Output summaries in the same order as the input list.
+- Introduce variable `summary_level` ("short" or "detailed").
+- If short → generate a compact 1–2 sentence summary (≤50 words).
+- If detailed → generate a short paragraph + 3–5 bullet points.
+- Only use section text (no hallucination).
+- Skip missing sections and pass to Guardrails.
+

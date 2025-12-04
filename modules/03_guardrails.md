@@ -1,8 +1,8 @@
-# Module 03 — Guardrails
+> Change Log (2025-12-02): Added strict evidence mode and standardized warning messages.
 
-- Enforce “only use information from the paper” (no hallucinations).
-- Check for missing or very short (<50 words) sections.
-- Produce standard warnings when text is missing or too short.
-- Enforce word limits: 50 words/section, 200-word final summary.
-- Ensure audience style rules are respected.
-- Pass clean, safe summaries to Rendering.
+- Add `evidence_mode = "strict"`:
+  - Only include claims/results explicitly stated in the section text.
+  - If insufficient info → say so explicitly.
+- Add warning messages:
+  - Missing section → “Section skipped: no usable text provided.”
+  - Too short section (<50 words) → “Section very short: summary may be incomplete.”
